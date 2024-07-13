@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sum Calculator</title>
+    <style>
+        body {
+            background-image: url("https://st.depositphotos.com/1148595/4929/v/450/depositphotos_49290049-stock-illustration-formula-math.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main-cointainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .calculation-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #bccdc5;
+            margin-top: 70px;
+            height: 500px;
+            width: 500px;
+            border-radius: 15px;
+        }
+
+        .input-box {
+            display: block;
+            font-size: 30px;
+            margin: 5px auto;
+            padding: 8px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .result-text {
+            font-size: 30px;
+        }
+
+        .btn-action {
+            margin-top: 20px;
+            width: 150px;
+            height: 40px;
+            border: none;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        .btn-action:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-cointainer">
+        <div class="calculation-box">
+            <h1 style="text-align: center;">Sum Calculator</h1>
+            <input type="text" class="input-box" id="input1"> </br> </br>
+            <input type="text" class="input-box" id="input2">
+            <p class="result-text" id="text-result"></p>
+            <button type="button" class="btn-action" onclick="calculateSum()">Calculate</button>
+            <button type="button" class="btn-action" onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateSum() {
+            const inputElement1 = document.getElementById("input1")
+            const inputElement2 = document.getElementById("input2")
+            const resultElement = document.getElementById("text-result")
+
+            const sum = parseInt(inputElement1.value || 0) + parseInt(inputElement2.value || 0)
+            resultElement.innerText = `Sum : ${sum}`
+        }
+
+        function reset() {
+            const inputElement1 = document.getElementById("input1")
+            inputElement1.value = ""
+            const inputElement2 = document.getElementById("input2")
+            inputElement2.value = ""
+
+            const resultElement = document.getElementById("text-result")
+            resultElement.innerText = ""
+        }
+    </script>
+</body>
+
+</html>
